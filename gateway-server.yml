@@ -1,0 +1,38 @@
+server:
+  port: 9600
+spring:
+  jpa:
+    hibernate:
+      use-new-id-generator-mappings: false
+    database-platform:
+      org.hibernate.dialect.MySQL5InnoDBDialect
+  application:
+    name: gateway-server
+  profiles:
+    active: dev
+  thymeleaf:
+    cache: false
+    mode: HTML
+  redis:
+    host: 192.168.186.128
+    port: 6379
+    password: rajan
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    username: root
+    password: root@1234
+    url: jdbc:mysql://localhost:3306/dynamic-route?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowMultiQueries=true
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      max-lifetime: 1800000
+      idle-timeout: 30000
+      auto-commit: true
+      pool-name: PbHikariCP
+      connection-test-query: SELECT 1
+      connection-timeout: 30000
+
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.advatix.routes.entity
+
