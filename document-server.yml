@@ -3,7 +3,7 @@ server:
 
 swagger:
   config:
-    refreshrate: 5000
+    refreshrate: 50000
     
 management:
   endpoints:
