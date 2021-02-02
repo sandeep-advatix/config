@@ -1,22 +1,11 @@
 server:
-  port: 9600
+  port: 9999
+
 spring:
   jpa:
     hibernate:
       use-new-id-generator-mappings: false
-    database-platform:
-      org.hibernate.dialect.MySQL5InnoDBDialect
-  application:
-    name: gateway-server
-  profiles:
-    active: dev
-  thymeleaf:
-    cache: false
-    mode: HTML
-  redis:
-    host: redis
-    port: 6379
-    password: rajan
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     username: developer
@@ -31,8 +20,25 @@ spring:
       pool-name: PbHikariCP
       connection-test-query: SELECT 1
       connection-timeout: 30000
+  profiles:
+    active: dev
+  application:
+    name: gateway-dynamic-route
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
 
-mybatis:
-  mapper-locations: classpath:mapping/*.xml
-  type-aliases-package: com.advatix.routes.entity
+eureka:
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+
+
+
 
