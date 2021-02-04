@@ -9,7 +9,7 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://naming-server:8761/eureka
   server:
     waitTimeInMsWhenSyncEmpty: 0
     enableSelfPreservation: false
