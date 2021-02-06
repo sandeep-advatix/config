@@ -16,6 +16,9 @@ spring:
       pool-name: PbHikariCP
       connection-test-query: SELECT 1
       connection-timeout: 30000
+  thymeleaf:
+    cache: false
+    suffix: .html
 logging:
   level:
     root: INFO
