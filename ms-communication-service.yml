@@ -4,13 +4,13 @@ server:
 spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    username: root
-    password: root@1234
+    username: developer
+    password: America#123
     url: jdbc:mysql://100.25.220.31:38607/comms?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowMultiQueries=true
   jpa:
     show-sql: false
     hibernate:
-      ddl-auto: create 
+      ddl-auto: update 
 feign:
   client:
     config:
