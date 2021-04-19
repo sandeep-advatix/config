@@ -25,3 +25,11 @@ logging:
     com.advatix: DEBUG
   pattern:
     console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr( ){faint} %clr([%8.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %X{REQUEST_ID} %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
+    
+feedback:
+  rating:
+    onestar: 1,<1,one,Poor
+    twostar: 2,>1,TWO,Below Medium
+    threestar: 3,>2,Three,Medium
+    fourstar: 4,>3,Four,above Medium
+    fivestar: 5,>5,Five,super
