@@ -6,7 +6,7 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     username: developer
     password: America#123
-    url: jdbc:mysql://100.25.220.31:38607/dynamic-route?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowMultiQueries=true
+    url: jdbc:mysql://52.73.29.175:38607/dynamic-route?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowMultiQueries=true
     hikari:
       maximum-pool-size: 20
       minimum-idle: 5
